@@ -35,7 +35,9 @@ export const TopNavbar = styled.div`
   .start-nav { flex: 0; padding: 0 40px; }
   .middle-nav {
     flex: 1;
-    display: flex;
+    .menu-wrapper {
+      display: flex;
+    }
     .menu-item {
       flex: 1;
       border-right: 1px solid #201c29;
@@ -53,9 +55,30 @@ export const TopNavbar = styled.div`
     }
   }
   @media only screen and (max-width: 950px) {
-    /* display: block; */
-    .menu-item {
+    --nav-height: 20px;
+    .menu-wrapper {
+      overflow: auto;
+      opacity: 0;
       visibility: hidden;
+      -webkit-transition: .2s;
+      transition: .2s;
+      position: absolute;
+      top: var(--nav-height);
+      right: 0;
+      background: #fff;
+      z-index: 1;
+      width: 200px;
+      height: calc(30vh - var(--nav-height));
+      flex-direction: column;
+    }
+    .open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .menu-item {
+      &:hover {
+        background: #aaa;
+      }
     }
     .end-nav {
       display: flex;
