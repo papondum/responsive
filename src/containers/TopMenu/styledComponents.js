@@ -1,37 +1,17 @@
 import styled from 'styled-components'
 export const AppWrapper = styled.div`
   height: 100vh;
-  /* width: 100vw; */
   background-color: #aaa;
   grid-gap: 100%;
+  display: ${props=>props.display||'block'};
+  flex-direction: ${props=>props.direction||'column'};
 `
-export const ContainerWrapper = styled.div`
-  background: blue;
-  margin: auto;
-  max-width: 1280px;
-  padding: 4rem;
-  .card-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    grid-gap: .5rem;
-  }
-`
-export const Item = styled.div`
-  background: ${props=>props.color};
-  height: 160px;
-  /* test */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
-export const MainText = styled.div`
-  max-width: 780px;
-  margin: auto;
-  padding-bottom: 30px;
-`
+
 export const TopNavbar = styled.div`
   display: flex;
   border-bottom-color: rgb(32, 28, 41);
+  background: #ff7043;
+  height: 20px;
   .start-nav { flex: 0; padding: 0 40px; }
   .middle-nav {
     flex: 1;
