@@ -58,7 +58,7 @@ class MenuBar extends React.Component {
   render() {
     const barType = this.barTypeChecker(this.props.type)
     return (
-      <MenuBarWrapper direction={barType}>
+      <MenuBarWrapper direction={barType} type={this.props.menuType}>
         {this.props.logoContent}
         {this.menutypeRender(this.props.type)}
         <div className="end-nav">
