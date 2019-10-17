@@ -1,5 +1,6 @@
 import React from 'react'
-const Menu = props => (
-  <div></div>
+import { MenuItemWrapper } from './styledComponents'
+const MenuItem = props => (
+  <MenuItemWrapper>{props.children}</MenuItemWrapper>
 )
-export default Menu
+export default MenuItem

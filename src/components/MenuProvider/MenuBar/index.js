@@ -1,5 +1,6 @@
 import React from 'react'
 import { LeftMenuList, TopMenuList, MenuBarWrapper } from './styledComponents'
+import Menu from './Menu'
 class MenuBar extends React.Component {
   constructor(props) {
     super(props)
@@ -17,12 +18,13 @@ class MenuBar extends React.Component {
   closeMenu() {
     this.setState({menuSmallScreen: ''})
   }
+
   menutypeRender(type) {
     let result
     switch (type) {
       case 'left':
         result = (
-          <LeftMenuList className={this.state.menuSmallScreen}>
+          <LeftMenuList type={this.props.menuType} className={this.state.menuSmallScreen}>
             {this.props.children}
           </LeftMenuList>
         )
@@ -67,4 +69,5 @@ class MenuBar extends React.Component {
   }
 }
 
+MenuBar.MenuItem = Menu
 export default MenuBar
