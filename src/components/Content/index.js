@@ -10,8 +10,19 @@ const Content = () => (
     </MainText>
     <div className="card-wrapper">
       <div className="card-wrapper">
-        <Item color="#e57373">1</Item>
-        <Item color="#e57373">2</Item>
+        <Item color="#e57373"
+          initial="hidden"
+          animate="visible"
+          variants={{hidden: {opacity:0}, visible: {opacity: 1}}}
+        >
+          1
+        </Item>
+        <Item color="#e57373"
+          animate={{ scale: [0, 1] }}
+          transition={{ duration: 0.25 }}
+        >
+          2
+        </Item>
       </div>
       <div className="card-wrapper">
         <Item color="#64b5f6">3</Item>

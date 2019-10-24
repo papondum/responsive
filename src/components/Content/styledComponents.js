@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 export const ContainerWrapper = styled.div`
   background: #a5d6a7;
   margin: 0 auto;
@@ -6,6 +7,7 @@ export const ContainerWrapper = styled.div`
   padding: 4rem;
   flex:1;
   overflow: auto;
+  width: -webkit-fill-available;
   /* height: 100%;
   box-sizing: border-box; */
   .card-wrapper {
@@ -15,7 +17,7 @@ export const ContainerWrapper = styled.div`
   }
 `
 
-export const Item = styled.div`
+export const Item = styled(motion.div)`
   background: ${props=>props.color};
   height: 160px;
   /* test */
